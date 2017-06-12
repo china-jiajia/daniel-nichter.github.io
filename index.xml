@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hack Mongo</title>
+    <link>http://hackmongo.com/</link>
+    <description>Recent content on Hack Mongo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://hackmongo.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Custom MongoDB Replica Set Write Concern</title>
+      <link>http://hackmongo.com/post/custom-mongodb-replica-set-write-concern/</link>
+      <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://hackmongo.com/post/custom-mongodb-replica-set-write-concern/</guid>
+      <description>One of the great things about MongoDB is write concern:
+ Write concern describes the level of acknowledgement requested from MongoDB for write operations to a standalone mongod or to replica sets or to sharded clusters.
+ Awesome! I want 1 write ack from any secondary in the primary DC so when the primary crashes we&amp;rsquo;re guaranteed to have an up-to-date secondary in the primary DC ready to be elected primary.</description>
+    </item>
+    
+    <item>
+      <title>Go Antipatterns</title>
+      <link>http://hackmongo.com/page/golang-antipatterns/</link>
+      <pubDate>Sat, 03 Jun 2017 18:51:14 -0700</pubDate>
+      
+      <guid>http://hackmongo.com/page/golang-antipatterns/</guid>
+      <description>Go Antipatterns These Go lang antipatterns are inspired by SQL Antipatterns. Antipattern Go code is syntactically correct, but there&amp;rsquo;s a better way that&amp;rsquo;s both functionally equivalent and idiomatic.
+These are guidelines not absolutes. For example, Generic Package is common in practice and often difficult to avoid. Spending significant time trying to rename a util package can quickly amount to bikeshedding. Therefore, an Importance is listed for each antipattern:
+   Importance Guideline     low Easy to make better later, so it can wait   medium Becomes more difficult to change the longer it remains, so make it better as soon as possible   high Make it better right now because it reflects and effects deep technical choices that are difficult to change later    All examples are from real code but anonymized and simplified.</description>
+    </item>
+    
+    <item>
+      <title>Idiomatic Go</title>
+      <link>http://hackmongo.com/page/idiomatic-go/</link>
+      <pubDate>Sat, 03 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://hackmongo.com/page/idiomatic-go/</guid>
+      <description> Idiomatic Go Canon can·on&amp;nbsp;&amp;nbsp;/ˈkanən/&amp;nbsp;&amp;nbsp;noun : a general law, rule, principle, or criterion by which something is judged
+These texts explicitly and implicitly define idiomatic Go code. Read, memorize, and refer to them often. Use them to settle debates.
+ Effective Go Golang FAQ Go at Google: Language Design in the Service of Software Engineering Go Standard Library Packages Godoc: documenting Go code Go Package Names  Recommended  Go Code Review Comments Best practices for a new Go developer Reducing Type Hierarchies  </description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://hackmongo.com/page/about/</link>
+      <pubDate>Mon, 29 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://hackmongo.com/page/about/</guid>
+      <description>Hack Mongo Hack Mongo is my personal blog about databases, the Go programming language, and software design. The name is a reference to Hack MySQL, another site/blog I maintained for ten years (2005-2015) while building a career with MySQL. Today, the new frontier is MongoDB, hence the new name: Hack Mongo.
+The content of this site is inspired by two things. First is my job: I work at Square as a DBA and Platform Engineer.</description>
+    </item>
+    
+  </channel>
+</rss>

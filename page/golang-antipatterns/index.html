@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Go Antipatterns</title>
+  <meta property="og:title" content="Go Antipatterns" />
+  <meta name="twitter:title" content="Go Antipatterns" />
+  <meta name="description" content="Go Antipatterns These Go lang antipatterns are inspired by SQL Antipatterns. Antipattern Go code is syntactically correct, but there&rsquo;s a better way that&rsquo;s both functionally equivalent and idiomatic.
+These are guidelines not absolutes. For example, Generic Package is common in practice and often difficult to avoid. Spending significant time trying to rename a util package can quickly amount to bikeshedding. Therefore, an Importance is listed for each antipattern:
+   Importance Guideline     low Easy to make better later, so it can wait   medium Becomes more difficult to change the longer it remains, so make it better as soon as possible   high Make it better right now because it reflects and effects deep technical choices that are difficult to change later    All examples are from real code but anonymized and simplified.">
+  <meta property="og:description" content="Go Antipatterns These Go lang antipatterns are inspired by SQL Antipatterns. Antipattern Go code is syntactically correct, but there&rsquo;s a better way that&rsquo;s both functionally equivalent and idiomatic.
+These are guidelines not absolutes. For example, Generic Package is common in practice and often difficult to avoid. Spending significant time trying to rename a util package can quickly amount to bikeshedding. Therefore, an Importance is listed for each antipattern:
+   Importance Guideline     low Easy to make better later, so it can wait   medium Becomes more difficult to change the longer it remains, so make it better as soon as possible   high Make it better right now because it reflects and effects deep technical choices that are difficult to change later    All examples are from real code but anonymized and simplified.">
+  <meta name="twitter:description" content="Go Antipatterns These Go lang antipatterns are inspired by SQL Antipatterns. Antipattern Go code is syntactically correct, but there&rsquo;s a better way that&rsquo;s both functionally equivalent and …">
+  <meta name="author" content="Daniel Nichter"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://hackmongo.com/page/golang-antipatterns/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hack Mongo" />
+
+  <meta name="generator" content="Hugo 0.20.7" />
+  <link rel="canonical" href="http://hackmongo.com/page/golang-antipatterns/" />
+  <link rel="alternate" href="http://hackmongo.com/index.xml" type="application/rss+xml" title="Hack Mongo">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap-toc.min.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/atom-one-dark.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/main.css" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://hackmongo.com/">Hack Mongo</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-left">
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">go</a>
+              <div class="navlinks-children">
+                
+                  <a href="/page/golang-antipatterns/">Go Antipatterns</a>
+                
+                  <a href="/page/idiomatic-go/">Idiomatic Go</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <nav id="toc" data-spy="affix" data-toggle="toc"><a href="#">Go Antipatterns</a></nav>
+    </div>
+    <div class="col-sm-8">
+      <article role="main" class="blog-post">
+        
+
+<h1 id="go-antipatterns">Go Antipatterns</h1>
+
+<p>These Go lang antipatterns are inspired by <a href="https://pragprog.com/book/bksqla/sql-antipatterns">SQL Antipatterns</a>. Antipattern Go code is syntactically correct, but there&rsquo;s a better way that&rsquo;s both functionally equivalent and <a href="http://hackmongo.com/page/idiomatic-go/">idiomatic</a>.</p>
+
+<p>These are guidelines not absolutes. For example, <a href="#generic-package">Generic Package</a> is common in practice and often difficult to avoid. Spending significant time trying to rename a <code>util</code> package can quickly amount to bikeshedding. Therefore, an <em>Importance</em> is listed for each antipattern:</p>
+
+<table>
+<thead>
+<tr>
+<th>Importance</th>
+<th>Guideline</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>low</td>
+<td>Easy to make better later, so it can wait</td>
+</tr>
+
+<tr>
+<td>medium</td>
+<td>Becomes more difficult to change the longer it remains, so make it better as soon as possible</td>
+</tr>
+
+<tr>
+<td>high</td>
+<td>Make it better right now because it reflects and effects deep technical choices that are difficult to change later</td>
+</tr>
+</tbody>
+</table>
+
+<p>All examples are from real code but anonymized and simplified.</p>
+
+<h2 id="writable-read-only-value">Writable Read-only Value</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+func Load(&amp;config)
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+func Load(config)
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>If an argument should not be modified, then don&rsquo;t allow it to be modified by passing a pointer; instead, by the argument by value. This prevents accidental modification and signals to developers that the function doesn&rsquo;t modify the argument. But when a function is intended to modify the argument, pass a pointer to signal this to developers.</p>
+
+<p>Another way to think about this: if Load() should not modify the caller&rsquo;s config, then preclude even the possibility by passing config by value. Otherwise, subtle and difficult bugs are possible when Load() mutates the config in wrong or unexpected ways causing the app to break or, worse, run like it&rsquo;s ok for awhile then crash later.</p>
+
+<h2 id="promiscuous-interface">Promiscuous Interface</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+type ObjectFinder interface {
+    Query(query string) []string
+}
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+type ObjectFinder interface {
+    Databases(app string) []string
+    Servers(dc string) []string
+}
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>Interfaces provide <em>discrete</em> functionality; they &ldquo;specify the behavior of an object: if something can do this, then it can be used here.&rdquo; (<a href="https://golang.org/doc/effective_go.html">Effective Go</a>) Methods like Query() allow the interface to do anything, making it difficult to test and mock. It also tends to leak logic: for the antipattern, the caller must know how to query for specific objects, but this logic (query syntax and semantics) is most likely not within the purview of the caller. It&rsquo;s better to encapsulate this logic in the implementation of the interface. This makes the caller simpler (it doesn&rsquo;t have to know query logic), and it decouples the caller from query logic which allow the logic to change without without breaking the caller.</p>
+
+<h2 id="labyrinthine-structure">Labyrinthine Structure</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+type Module struct {
+    *ConfigModule
+}
+
+type ConfigModule struct {
+    Config              ServerConfig
+    Base                *config.BaseModule
+    ServiceConfigModule *config.Module
+}
+
+type ServerConfig struct {
+    SSL *ServiceSSLConfig
+}
+			        
+type ServiceSSLConfig struct {
+    KeyFile string
+}
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>Structures should be shallow, preferably no more than three levels deep, especially when embedding is used. Structure and field names should be unique and descriptive. No proper example is given for the example above because it&rsquo;s too conflated for clarification, probably resulting from an inherently flawed data model. To be done properly, we would need first to clarify the data model.</p>
+
+<p>To highlight the antipattern, think about how KeyFile would be accessed from a Module object. It requires a nontrivial and unnecessary amount of attention to detail because of embedding and repeated use of &ldquo;Config&rdquo;.</p>
+
+<h2 id="hidden-goroutine">Hidden Goroutine</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+func Cleanup() {
+    go func() {
+        // ...
+    }()
+}
+
+Cleanup()
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+func Cleanup() {
+    // ...
+}
+
+go Cleanup()
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>All code should be necessary and sufficient. The Cleanup() function in the antipattern is not necessary. The better implementation is sufficient (and still necessary). Additionally, the antipattern breaks developer expectation by hiding the goroutine because, in general, function calls are expected to be synchronous. When a function does nothing but launch a goroutine, it is asynchronous. Functions can and should launch goroutines, but not only this. The better solution is unambiguous, explicit. It also allows Cleanup() to be called synchronously if needed, whereas the antipattern precludes this possibility (as well as testing).</p>
+
+<h2 id="new-and-do">New and Do</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+func NewFoo() (*Foo, error) {
+    if err := connect(); err != nil {
+        return nil, err
+    }
+    return &amp;Foo{}
+}
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+func NewFoo() *Foo {
+    return &amp;Foo{}
+}
+
+func (f *Foo) Connect() error {
+    if err := f.connect(); err != nil {
+        return nil, err
+    }
+    return nil
+}
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>NewFoo() in the antipattern does two things: it creates a new Foo object <em>and</em> it connects (to whatever; a database, for example). That functions should do one thing is a widely accepted principle (related: <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">Single Responsibility Principle</a>).</p>
+
+<p>The antipattern also creates a tight coupling between object creation and connection, meaning the caller cannot create a Foo object and connect later, which is common when objects are not created by the caller but, for example, by a <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">factory method</a>. In this case, the factory should only create Foo and let the caller connect Foo when and where necessary.</p>
+
+<p>The antipattern also makes it difficult to test connect() separately, and it makes the return error more difficult to handle because it could be a transient or retryable connect() error, or a fatal object creation error.</p>
+
+<p>What if Foo should always be connected? What if Foo isn&rsquo;t useful until connected? This is common, but it&rsquo;s still better to decouple creation and connection and let the caller connect where and when necessary. It means the caller must do one more step (i.e. call Connect() after NewFoo()), but that&rsquo;s a small price to pay for better, more explicit design.</p>
+
+<p>There is, however, a valid reason for NewFoo() to call other functions: when the functions are necessary and sufficient to the <em>creation</em> of the new object. By contrast, connect() is neither necessary nor sufficient to create a Foo; it&rsquo;s necessary (but perhaps not sufficient) to <em>use</em> a Foo. If, for example, a Foo cannot be created without the return value from bar(), then call bar() in NewFoo().</p>
+
+<p>Notice also that the better example doesn&rsquo;t return an error. Unless an object is complex (and if too complex, perhaps it&rsquo;s doing too much and should be multiple, simpler objects), creation should be guaranteed, hence no return error. This means creation should be little more than initializing and assigning variables.</p>
+
+<h2 id="superfluous-structure">Superfluous Structure</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+type RedisInfo map[string]string
+
+type RawMetrics struct {
+    Info RedisInfo
+}
+
+func (r *Redis) Info() RawMetrics
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+func (r *Redis) Info() map[string]string
+</code></pre>
+
+<p><em>Importance: medium</em></p>
+
+<p>The simplest and most direct use of data types and structures yields code that&rsquo;s easier to follow and test because there are no superfluous parts. RawMetrics, with no other fields, serves no purpose. If other fields are planned/expected (and <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">YAGNI</a> isn&rsquo;t a stronger argument), a code comment should note it. Otherwise, it&rsquo;s better to keep it simple and return the native data type: map[string]string.</p>
+
+<h2 id="transient-argument">Transient Argument</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+func GetNodes(er Ranger, query string) []string {
+    nodes := er.Query(query)
+    // logic to transform nodes
+    return nodesByName
+}
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+func GetNodes(er Ranger) []string {
+    nodes := er.GetNodes()
+    // logic to transform nodes
+    return nodesByName
+}
+</code></pre>
+
+<p><em>Importance: medium</em></p>
+
+<p>An argument is transient if not directly used by the function; the function only passes it to other function calls. The argument is literally only passing through the function, hence it is &ldquo;transient&rdquo;. The antipattern also exhibits the &ldquo;Promiscuous Interface&rdquo; antipattern, and the better solution uses a well-defined interface to avoid the transient argument by encapsulating the query logic in the Ranger implementation.</p>
+
+<h2 id="c-style-pointer">C-style Pointer</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+var fileName *string
+var files *[]FileInfo
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+var fileName string
+var files []FileInfo
+</code></pre>
+
+<p><em>Importance: medium</em></p>
+
+<p>It&rsquo;s not typical and usually not necessary to use pointers to scalars, slices, or maps in Go. There are exceptions (see <a href="https://dhdersch.github.io/golang/2016/01/23/golang-when-to-use-string-pointers.html">GoLang: When to use string pointers</a>), but excessive use of pointers indicates Go being written like C (or C++ or Java) where pointers are more commonplace. In Go, the ubiquitous (and correct) use of pointers is to structures (<code>func(t *T)</code>, <code>return &amp;T{}</code>, <code>var t = &amp;T{}</code>, etc.) and pointer methods (<code>func (t *T) Foo()</code>).</p>
+
+<h2 id="type-hiding">Type Hiding</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+type Job struct { ... }
+type Jobs []Job
+
+func List(Jobs)
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+type Job struct { ... }
+
+func List([]Job)
+</code></pre>
+
+<p><em>Importance: medium</em></p>
+
+<p>Unless a custom <a href="https://golang.org/pkg/sort/">sort</a> on Jobs is required, Jobs should not be used because it hides the underlying data type (Job) and requires one to remember that Jobs is just []Job. Better to keep it simple and explicit: use []Job directly.</p>
+
+<h2 id="generic-package">Generic Package</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+import (
+    &quot;app/tools&quot;
+    &quot;app/util&quot;
+    &quot;app/misc&quot;
+    &quot;app/db&quot;
+)
+</code></pre>
+
+<p><em>Importance: low</em></p>
+
+<p>A package provides functionality around a logical and isolated part of the system. &ldquo;What can pkg X do?&rdquo; is the question we ask of that part. &ldquo;How we do X&rdquo; is an implementation detail that&rsquo;s leaked by generic package names. Of course, naming things is difficult, and generic packages are common, but we should nonetheless attempt to clarify their purpose and place in the app with a more domain-specific package name.</p>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <p class="copyright text-muted">
+    Copyright 2017 Daniel Nichter
+  </p>
+  <p><a href="https://github.com/daniel-nichter"><img src="http://hackmongo.com/img/mark-github.svg"></a></p>
+</footer>
+<script src="http://hackmongo.com/js/jquery-3.2.1.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap-toc.min.js"></script>
+<script src="http://hackmongo.com/js/highlight.min.js"></script>
+<script src="http://hackmongo.com/js/main.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
