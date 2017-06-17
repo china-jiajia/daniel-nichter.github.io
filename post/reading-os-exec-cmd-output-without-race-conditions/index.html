@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Reading os/exec.Cmd Output Without Race Conditions</title>
+  <meta property="og:title" content="Reading os/exec.Cmd Output Without Race Conditions" />
+  <meta name="twitter:title" content="Reading os/exec.Cmd Output Without Race Conditions" />
+  <meta name="description" content="And without cmd.StdoutPipe">
+  <meta property="og:description" content="And without cmd.StdoutPipe">
+  <meta name="twitter:description" content="And without cmd.StdoutPipe">
+  <meta name="author" content="Daniel Nichter"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hack Mongo" />
+
+  <meta name="generator" content="Hugo 0.20.7" />
+  <link rel="canonical" href="http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/" />
+  <link rel="alternate" href="http://hackmongo.com/index.xml" type="application/rss+xml" title="Hack Mongo">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap-toc.min.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/atom-one-dark.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/main.css" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://hackmongo.com/">Hack Mongo</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-left">
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">go</a>
+              <div class="navlinks-children">
+                
+                  <a href="/page/golang-antipatterns/">Go Antipatterns</a>
+                
+                  <a href="/page/idiomatic-go/">Idiomatic Go</a>
+                
+              </div>
+            </li>
+          
+        
+
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main">
+        <h1 class="post-title">Reading os/exec.Cmd Output Without Race Conditions</h1>
+        <h3 class="post-subtitle">And without cmd.StdoutPipe</h2>
+        <div class="post-meta">
+  
+  
+  <div>Jun 17, 2017</div>
+  <div class="blog-tags">
+    
+      
+        <a href="/tags/golang">#golang</a>
+      
+        <a href="/tags/os/exec">#os/exec</a>
+      
+        <a href="/tags/race-condition">#race condition</a>
+      
+    
+  </div>
+</div>
+
+
+        
+
+<p><a href="https://golangweekly.com/issues/164">Golang Weekly issue 164</a> features a nice article, <a href="https://blog.kowalczyk.info/article/wOYk/advanced-command-execution-in-go-with-osexec.html">Advanced command execution in Go with os/exec</a>, which details several ways of working with <a href="https://golang.org/pkg/os/exec/">os/exec</a>, especially how to read STDOUT and STDERR while the command is running. This common task is commonly done wrong, where &ldquo;wrong&rdquo; means &ldquo;the code has a race condition&rdquo;. This blog post shows how to read STDOUT and STDERR from an <code>os/exec.Cmd</code> while it&rsquo;s running and <em>without</em> race conditions.</p>
+
+<h3 id="problem">Problem</h3>
+
+<p>The Internet is rife solutions like Krzysztof provides (but afaik no one has provided them in one place and so thoroughly, so his post is a good read nonetheless), but let&rsquo;s test one:</p>
+
+<pre><code class="language-go">//
+// cmd.go
+//
+package cmd
+
+import (
+	&quot;bytes&quot;
+	&quot;fmt&quot;
+	&quot;io&quot;
+	&quot;log&quot;
+	&quot;os&quot;
+	&quot;os/exec&quot;
+)
+
+func Run() {
+	var stdoutBuf, stderrBuf bytes.Buffer
+	cmd := exec.Command(&quot;ls&quot;, &quot;-lah&quot;)
+
+	stdoutIn, _ := cmd.StdoutPipe()
+	stderrIn, _ := cmd.StderrPipe()
+
+	var errStdout, errStderr error
+	stdout := io.MultiWriter(os.Stdout, &amp;stdoutBuf)
+	stderr := io.MultiWriter(os.Stderr, &amp;stderrBuf)
+	err := cmd.Start()
+	if err != nil {
+		log.Fatalf(&quot;cmd.Start() failed with '%s'\n&quot;, err)
+	}
+
+	go func() {
+		_, errStdout = io.Copy(stdout, stdoutIn)
+	}()
+
+	go func() {
+		_, errStderr = io.Copy(stderr, stderrIn)
+	}()
+
+	err = cmd.Wait()
+	if err != nil {
+		log.Fatalf(&quot;cmd.Run() failed with %s\n&quot;, err)
+	}
+	if errStdout != nil || errStderr != nil {
+		log.Fatal(&quot;failed to capture stdout or stderr\n&quot;)
+	}
+	outStr, errStr := string(stdoutBuf.Bytes()), string(stderrBuf.Bytes())
+	fmt.Printf(&quot;\nout:\n%s\nerr:\n%s\n&quot;, outStr, errStr)
+}
+</code></pre>
+
+<pre><code class="language-go">//
+// cmd_test.go
+//
+package cmd
+
+import (
+	&quot;testing&quot;
+)
+
+func TestRun(t *testing.T) {
+	Run()
+}
+
+</code></pre>
+
+<p>Let&rsquo;s <code>go test -race</code> it:</p>
+
+<pre><code>$ go test -race
+
+==================
+WARNING: DATA RACE
+Write at 0x00c420084280 by goroutine 6:
+  os.(*file).close()
+      /usr/local/opt/go/libexec/src/os/file_unix.go:143 +0x124
+  os.(*File).Close()
+      /usr/local/opt/go/libexec/src/os/file_unix.go:132 +0x55
+  os/exec.(*Cmd).closeDescriptors()
+      /usr/local/opt/go/libexec/src/os/exec/exec.go:262 +0x67
+  os/exec.(*Cmd).Wait()
+      /usr/local/opt/go/libexec/src/os/exec/exec.go:447 +0x2bd
+  _/opt/dev/test/cmd-output/cmd.Run()
+      /opt/dev/test/cmd-output/cmd/cmd.go:35 +0x4ea
+  _/opt/dev/test/cmd-output/cmd.TestRun()
+      /opt/dev/test/cmd-output/cmd/cmd_test.go:8 +0x2f
+  testing.tRunner()
+      /usr/local/opt/go/libexec/src/testing/testing.go:610 +0xc9
+
+Previous read at 0x00c420084280 by goroutine 7:
+  os.(*File).read()
+      /usr/local/opt/go/libexec/src/os/file_unix.go:228 +0x7e
+  os.(*File).Read()
+      /usr/local/opt/go/libexec/src/os/file.go:101 +0x6f
+  io.copyBuffer()
+      /usr/local/opt/go/libexec/src/io/io.go:390 +0x168
+  io.Copy()
+      /usr/local/opt/go/libexec/src/io/io.go:360 +0x7e
+  _/opt/dev/test/cmd-output/cmd.Run.func1()
+      /opt/dev/test/cmd-output/cmd/cmd.go:28 +0x7e
+
+Goroutine 6 (running) created at:
+  testing.(*T).Run()
+      /usr/local/opt/go/libexec/src/testing/testing.go:646 +0x52f
+  testing.RunTests.func1()
+      /usr/local/opt/go/libexec/src/testing/testing.go:793 +0xb9
+  testing.tRunner()
+      /usr/local/opt/go/libexec/src/testing/testing.go:610 +0xc9
+  testing.RunTests()
+      /usr/local/opt/go/libexec/src/testing/testing.go:799 +0x4ba
+  testing.(*M).Run()
+      /usr/local/opt/go/libexec/src/testing/testing.go:743 +0x12f
+  main.main()
+      _/opt/dev/test/cmd-output/cmd/_test/_testmain.go:54 +0x1b8
+
+Goroutine 7 (finished) created at:
+  _/opt/dev/test/cmd-output/cmd.Run()
+      /opt/dev/test/cmd-output/cmd/cmd.go:29 +0x480
+  _/opt/dev/test/cmd-output/cmd.TestRun()
+      /opt/dev/test/cmd-output/cmd/cmd_test.go:8 +0x2f
+  testing.tRunner()
+      /usr/local/opt/go/libexec/src/testing/testing.go:610 +0xc9
+==================
+
+...
+
+Found 7 data race(s)
+exit status 66
+FAIL	_/opt/dev/test/cmd-output/cmd	1.025s
+</code></pre>
+
+<p>I&rsquo;ll summarize:</p>
+
+<ul>
+<li>goroutine 6:
+
+<ul>
+<li>runs cmd</li>
+<li>writes to stdout</li>
+</ul></li>
+<li>goroutine 7
+
+<ul>
+<li>runs <code>io.Copy</code></li>
+<li>reads from stdout</li>
+</ul></li>
+<li>cmd finishes
+
+<ul>
+<li><code>Wait</code> closes stdout (goroutine 6)</li>
+<li><code>io.Copy</code> was reading stdout (goroutine 7)</li>
+</ul></li>
+<li>Race condition:
+
+<ul>
+<li>two goroutines accessing stdout without concurrency guards/sync</li>
+<li>did <code>io.Copy</code> read everything before <code>Wait</code> closed stdout?</li>
+</ul></li>
+</ul>
+
+<p>Sidebar: another great article in Golang Weekly issue 164: <a href="https://joeshaw.org/dont-defer-close-on-writable-files/">Don’t defer Close() on writable files</a></p>
+
+<p>The docs for <a href="https://golang.org/pkg/os/exec/#Cmd.StdoutPipe">Cmd.StdoutPipe</a> say:</p>
+
+<blockquote>
+<p>Wait will close the pipe after seeing the command exit, so most callers need not close the pipe themselves; however, an implication is that it is incorrect to call Wait before all reads from the pipe have completed.</p>
+</blockquote>
+
+<p>To put it another way: the correct usage is to read everything first, <em>then</em> call <code>Wait</code>. The docs provide an idiomatic example to illustrate. Used correctly, there&rsquo;s no race condition because the simple flow is <code>reads -&gt; (reads stop) -&gt; close -&gt; wirte</code>. Consequently, and unfortunately for what we&rsquo;re trying to achieve, reading <code>StdoutPipe</code> before/during <code>Wait</code> is wrong and causes a race condition.</p>
+
+<h3 id="solution">Solution</h3>
+
+<p>TL;DR: <a href="https://github.com/go-cmd/cmd">go-cmd/cmd</a></p>
+
+<p>I agree with Krzysztof: it&rsquo;s important to understand <code>os/exec</code>. Once you do and you want to make things &ldquo;just work&rdquo;, just use <code>go-cmd/cmd</code>; it has <em>100% test coverage</em> and <em>no race conditions</em>, and it can be used synchronously or asynchronously. It also correctly handles process termination, which is a problem far more subtle and infrequently realized let alone handled.</p>
+
+<p>Here&rsquo;s how <code>go-cmd/cmd</code> handles it (just code snippets):</p>
+
+<pre><code class="language-go">// os/exec.Cmd.StdoutPipe is usually used incorrectly. The docs are clear:
+// &quot;it is incorrect to call Wait before all reads from the pipe have completed.&quot;
+// Therefore, we can't read from the pipe in another goroutine because it
+// causes a race condition: we'll read in one goroutine and the original
+// goroutine that calls Wait will write on close which is what Wait does.
+// The proper solution is using an io.Writer for cmd.Stdout. I couldn't find
+// an io.Writer that's also safe for concurrent reads (as lines in a []string
+// no less), so I created one:
+type output struct {
+	buf   *bytes.Buffer
+	lines []string
+	*sync.Mutex
+}
+
+func newOutput() *output {
+	return &amp;output{
+		buf:   &amp;bytes.Buffer{},
+		lines: []string{},
+		Mutex: &amp;sync.Mutex{},
+	}
+}
+
+// io.Writer interface is only this method
+func (rw *output) Write(p []byte) (int, error) {
+	rw.Lock()
+	defer rw.Unlock()
+	return rw.buf.Write(p) // and bytes.Buffer implements it, too
+}
+
+func (rw *output) Lines() []string {
+	rw.Lock()
+	defer rw.Unlock()
+	// Scanners are io.Readers which effectively destroy the buffer by reading
+	// to EOF. So once we scan the buf to lines, the buf is empty again.
+	s := bufio.NewScanner(rw.buf)
+	for s.Scan() {
+		rw.lines = append(rw.lines, s.Text())
+	}
+	return rw.lines
+}
+
+//
+// Elsewhere in the code...
+//
+
+cmd := exec.Command(name, args...)
+
+stdout = newOutput()
+stderr = newOutput()
+
+cmd.Stdout = stdout
+cmd.Stderr = stderr
+
+cmd.Start() 
+
+// Safe to call stdout.Lines()
+
+cmd.Wait()
+</code></pre>
+
+<p>This this the best way? I don&rsquo;t know. Is it a <em>correct</em> way? I&rsquo;m 99% certain it is. Does it work? Yes! I&rsquo;ve used it extensively in the real world without issues.</p>
+
+<p><code>go-cmd/cmd</code> saves me a lot of time because it just works. I hope it &ldquo;just works&rdquo; for you, too, and I hope this blog post helps turn the tide of racey solutions to the common and important task of reading STDOUT/STDERR from a Go <code>os/exec.Cmd</code> while it&rsquo;s running.</p>
+
+      </article>
+      <hr>
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://hackmongo.com/post/custom-mongodb-replica-set-write-concern/" data-toggle="tooltip" data-placement="top" title="Custom MongoDB Replica Set Write Concern">&larr; </a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'hackmongo';
+    var disqus_identifier = 'http:\/\/hackmongo.com\/post\/reading-os-exec-cmd-output-without-race-conditions\/';
+    var disqus_title = 'Reading os\/exec.Cmd Output Without Race Conditions';
+    var disqus_url = 'http:\/\/hackmongo.com\/post\/reading-os-exec-cmd-output-without-race-conditions\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+        
+      
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <p class="copyright text-muted">
+    Copyright 2017 Daniel Nichter
+  </p>
+  <p><a href="https://github.com/daniel-nichter"><img src="http://hackmongo.com/img/mark-github.svg"></a></p>
+</footer>
+<script src="http://hackmongo.com/js/jquery-3.2.1.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap-toc.min.js"></script>
+<script src="http://hackmongo.com/js/highlight.min.js"></script>
+<script src="http://hackmongo.com/js/main.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
