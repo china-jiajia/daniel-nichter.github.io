@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Golang on Hack Mongo</title>
+    <link>http://hackmongo.com/tags/golang/</link>
+    <description>Recent content in Golang on Hack Mongo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://hackmongo.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reading os/exec.Cmd Output Without Race Conditions</title>
+      <link>http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/</link>
+      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/</guid>
+      <description>Golang Weekly issue 164 features a nice article, Advanced command execution in Go with os/exec, which details several ways of working with os/exec, especially how to read STDOUT and STDERR while the command is running. This common task is commonly done wrong, where &amp;ldquo;wrong&amp;rdquo; means &amp;ldquo;the code has a race condition&amp;rdquo;. This blog post shows how to read STDOUT and STDERR from an os/exec.Cmd while it&amp;rsquo;s running and without race conditions.</description>
+    </item>
+    
+    <item>
+      <title>Go Antipatterns</title>
+      <link>http://hackmongo.com/page/golang-antipatterns/</link>
+      <pubDate>Sat, 03 Jun 2017 18:51:14 -0700</pubDate>
+      
+      <guid>http://hackmongo.com/page/golang-antipatterns/</guid>
+      <description>Go Antipatterns These Go lang antipatterns are inspired by SQL Antipatterns. Antipattern Go code is syntactically correct, but there&amp;rsquo;s a better way that&amp;rsquo;s both functionally equivalent and idiomatic.
+These are guidelines not absolutes. For example, Generic Package is common in practice and often difficult to avoid. Spending significant time trying to rename a util package can quickly amount to bikeshedding. Therefore, an Importance is listed for each antipattern:
+   Importance Guideline     low Easy to make better later, so it can wait   medium Becomes more difficult to change the longer it remains, so make it better as soon as possible   high Make it better right now because it reflects and effects deep technical choices that are difficult to change later    All examples are from real code but anonymized and simplified.</description>
+    </item>
+    
+    <item>
+      <title>Idiomatic Go</title>
+      <link>http://hackmongo.com/page/idiomatic-go/</link>
+      <pubDate>Sat, 03 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://hackmongo.com/page/idiomatic-go/</guid>
+      <description> Idiomatic Go Canon can·on&amp;nbsp;&amp;nbsp;/ˈkanən/&amp;nbsp;&amp;nbsp;noun : a general law, rule, principle, or criterion by which something is judged
+These texts explicitly and implicitly define idiomatic Go code. Read, memorize, and refer to them often. Use them to settle debates.
+ Effective Go Golang FAQ Go at Google: Language Design in the Service of Software Engineering Go Standard Library Packages Godoc: documenting Go code Go Package Names  Recommended  Go Code Review Comments Best practices for a new Go developer Reducing Type Hierarchies  </description>
+    </item>
+    
+  </channel>
+</rss>

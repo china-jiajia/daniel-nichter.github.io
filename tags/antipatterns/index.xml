@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Antipatterns on Hack Mongo</title>
+    <link>http://hackmongo.com/tags/antipatterns/</link>
+    <description>Recent content in Antipatterns on Hack Mongo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 03 Jun 2017 18:51:14 -0700</lastBuildDate>
+    
+	<atom:link href="http://hackmongo.com/tags/antipatterns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go Antipatterns</title>
+      <link>http://hackmongo.com/page/golang-antipatterns/</link>
+      <pubDate>Sat, 03 Jun 2017 18:51:14 -0700</pubDate>
+      
+      <guid>http://hackmongo.com/page/golang-antipatterns/</guid>
+      <description>Go Antipatterns These Go lang antipatterns are inspired by SQL Antipatterns. Antipattern Go code is syntactically correct, but there&amp;rsquo;s a better way that&amp;rsquo;s both functionally equivalent and idiomatic.
+These are guidelines not absolutes. For example, Generic Package is common in practice and often difficult to avoid. Spending significant time trying to rename a util package can quickly amount to bikeshedding. Therefore, an Importance is listed for each antipattern:
+   Importance Guideline     low Easy to make better later, so it can wait   medium Becomes more difficult to change the longer it remains, so make it better as soon as possible   high Make it better right now because it reflects and effects deep technical choices that are difficult to change later    All examples are from real code but anonymized and simplified.</description>
+    </item>
+    
+  </channel>
+</rss>
