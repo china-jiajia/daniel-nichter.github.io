@@ -7,81 +7,90 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 03 Jun 2017 18:51:14 -0700</lastBuildDate>
-    
+
 	<atom:link href="http://hackmongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+
     <item>
       <title>Antipatterns</title>
       <link>http://hackmongo.com/tags/antipatterns/</link>
       <pubDate>Sat, 03 Jun 2017 18:51:14 -0700</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/antipatterns/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Golang</title>
       <link>http://hackmongo.com/tags/golang/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/golang/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Mongodb</title>
       <link>http://hackmongo.com/tags/mongodb/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/mongodb/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Os/Exec</title>
       <link>http://hackmongo.com/tags/os/exec/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/os/exec/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Race Condition</title>
       <link>http://hackmongo.com/tags/race-condition/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/race-condition/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Replica Set</title>
       <link>http://hackmongo.com/tags/replica-set/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/replica-set/</guid>
       <description></description>
     </item>
-    
+
+    <item>
+      <title>Software Design</title>
+      <link>http://hackmongo.com/tags/software-design/</link>
+      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/tags/software-design/</guid>
+      <description></description>
+    </item>
+
     <item>
       <title>Tag Set</title>
       <link>http://hackmongo.com/tags/tag-set/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/tag-set/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Write Concern</title>
       <link>http://hackmongo.com/tags/write-concern/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
-      
+
       <guid>http://hackmongo.com/tags/write-concern/</guid>
       <description></description>
     </item>
-    
+
   </channel>
 </rss>

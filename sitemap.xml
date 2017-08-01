@@ -1,101 +1,112 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+
+  <url>
+    <loc>http://hackmongo.com/post/design-before-implementation/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+  </url>
+
   <url>
     <loc>http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/</loc>
     <lastmod>2017-06-17T00:00:00+00:00</lastmod>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/post/custom-mongodb-replica-set-write-concern/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/page/golang-antipatterns/</loc>
     <lastmod>2017-06-03T18:51:14-07:00</lastmod>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/page/idiomatic-go/</loc>
     <lastmod>2017-06-03T00:00:00+00:00</lastmod>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/page/about/</loc>
     <lastmod>2017-05-29T00:00:00+00:00</lastmod>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/antipatterns/</loc>
     <lastmod>2017-06-03T18:51:14-07:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/golang/</loc>
     <lastmod>2017-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/mongodb/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/os/exec/</loc>
     <lastmod>2017-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/page/</loc>
     <lastmod>2017-06-03T18:51:14-07:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/post/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/race-condition/</loc>
     <lastmod>2017-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/replica-set/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
+  <url>
+    <loc>http://hackmongo.com/tags/software-design/</loc>
+    <lastmod>2017-08-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
   <url>
     <loc>http://hackmongo.com/tags/tag-set/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/</loc>
     <lastmod>2017-06-03T18:51:14-07:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
   <url>
     <loc>http://hackmongo.com/tags/write-concern/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
-  
+
 </urlset>
