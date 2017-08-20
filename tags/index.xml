@@ -21,6 +21,15 @@
     </item>
 
     <item>
+      <title>Database</title>
+      <link>http://hackmongo.com/tags/database/</link>
+      <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/database/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Golang</title>
       <link>http://hackmongo.com/tags/golang/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
@@ -68,7 +77,7 @@
     <item>
       <title>Software Design</title>
       <link>http://hackmongo.com/tags/software-design/</link>
-      <pubDate>Tue, 01 Aug 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
 
       <guid>http://hackmongo.com/tags/software-design/</guid>
       <description></description>
@@ -80,6 +89,15 @@
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
 
       <guid>http://hackmongo.com/tags/tag-set/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Testing</title>
+      <link>http://hackmongo.com/tags/testing/</link>
+      <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/testing/</guid>
       <description></description>
     </item>
 
