@@ -6,10 +6,19 @@
     <description>Recent content on Hack Mongo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 20 Aug 2017 11:20:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 05 Sep 2017 00:00:00 +0000</lastBuildDate>
 
 	<atom:link href="http://hackmongo.com/index.xml" rel="self" type="application/rss+xml" />
 
+
+    <item>
+      <title>Designing Tools for Integration</title>
+      <link>http://hackmongo.com/post/designing-tools-for-integration/</link>
+      <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/post/designing-tools-for-integration/</guid>
+      <description>When we write a new tool to do X, it&amp;rsquo;s common to program the tool to do X in one way. When X is trivial or very narrow in scope, this makes sense, and programming any more would fall prey to over-engineering. However, when the tool does many things (all logically related, else it falls prey to bloat and/or feature-creep), there quickly becomes many ways to accomplish those many things.</description>
+    </item>
 
     <item>
       <title>How To Test the Database</title>
