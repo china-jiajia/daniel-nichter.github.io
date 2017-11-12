@@ -21,6 +21,15 @@
     </item>
 
     <item>
+      <title>Business</title>
+      <link>http://hackmongo.com/tags/business/</link>
+      <pubDate>Sun, 12 Nov 2017 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/tags/business/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Checklist</title>
       <link>http://hackmongo.com/tags/checklist/</link>
       <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
@@ -35,6 +44,15 @@
       <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
 
       <guid>http://hackmongo.com/tags/database/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Engineering</title>
+      <link>http://hackmongo.com/tags/engineering/</link>
+      <pubDate>Sun, 12 Nov 2017 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/tags/engineering/</guid>
       <description></description>
     </item>
 
@@ -57,6 +75,15 @@
     </item>
 
     <item>
+      <title>Leadership</title>
+      <link>http://hackmongo.com/tags/leadership/</link>
+      <pubDate>Sun, 12 Nov 2017 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/tags/leadership/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Mongodb</title>
       <link>http://hackmongo.com/tags/mongodb/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
@@ -71,6 +98,15 @@
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
 
       <guid>http://hackmongo.com/tags/os/exec/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Philosophy</title>
+      <link>http://hackmongo.com/tags/philosophy/</link>
+      <pubDate>Sun, 12 Nov 2017 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/tags/philosophy/</guid>
       <description></description>
     </item>
 
