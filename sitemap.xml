@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
+    <loc>http://hackmongo.com/post/approaching-a-new-software-project/</loc>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/post/ideas-leaders-and-engineers/</loc>
     <lastmod>2017-11-12T00:00:00+00:00</lastmod>
   </url>
@@ -76,6 +81,12 @@
   </url>
 
   <url>
+    <loc>http://hackmongo.com/tags/domain-model/</loc>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/tags/engineering/</loc>
     <lastmod>2017-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -89,7 +100,7 @@
 
   <url>
     <loc>http://hackmongo.com/</loc>
-    <lastmod>2017-11-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -131,7 +142,7 @@
 
   <url>
     <loc>http://hackmongo.com/post/</loc>
-    <lastmod>2017-11-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -149,7 +160,7 @@
 
   <url>
     <loc>http://hackmongo.com/tags/software-design/</loc>
-    <lastmod>2017-09-17T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
