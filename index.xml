@@ -6,10 +6,21 @@
     <description>Recent content on Hack Mongo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Dec 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 Dec 2017 09:50:00 -0700</lastBuildDate>
 
 	<atom:link href="http://hackmongo.com/index.xml" rel="self" type="application/rss+xml" />
 
+
+    <item>
+      <title>Tech Workers Are Good People</title>
+      <link>http://hackmongo.com/post/tech-workers-are-good-people/</link>
+      <pubDate>Sun, 31 Dec 2017 09:50:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/post/tech-workers-are-good-people/</guid>
+      <description>The Other Tech Bubble is a provocative and interesting read. The author clearly has a lot of experience with Silicon Valley and has done their homework. There are many good insights, like &amp;ldquo;They&amp;rsquo;re still asking if it&amp;rsquo;s possible to do something, and not whether they should.&amp;rdquo; But there are two claims and one ambiguity that need to be addressed.
+Villains The first claim is:
+ In 2008, it was Wall Street bankers.</description>
+    </item>
 
     <item>
       <title>Approaching a New Software Project</title>
@@ -116,7 +127,7 @@ These texts explicitly and implicitly define idiomatic Go code. Read, memorize, 
 
       <guid>http://hackmongo.com/page/about/</guid>
       <description>Hack Mongo Hack Mongo is my personal blog about databases, the Go programming language, and software design. The name is a reference to Hack MySQL, another site/blog I maintained for ten years (2005-2015) while building a career with MySQL. Today, the new frontier is MongoDB, hence the new name: Hack Mongo.
-The content of this site is inspired by two things. First is my job: I work at Square as a DBA and Platform Engineer.</description>
+The content of this site is inspired by two things. First is my job: I work at Square. Working with thousands of databases, hundreds of microservices, and engineers across the company, I&amp;rsquo;m fortunate to always have new challenges and opportunities to both learn and mentor.</description>
     </item>
 
   </channel>
