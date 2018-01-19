@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>MongoDB Bulk Insert Error Handling</title>
+  <meta property="og:title" content="MongoDB Bulk Insert Error Handling" />
+  <meta name="twitter:title" content="MongoDB Bulk Insert Error Handling" />
+  <meta name="description" content="At least N documents inserted">
+  <meta property="og:description" content="At least N documents inserted">
+  <meta name="twitter:description" content="At least N documents inserted">
+  <meta name="author" content="Daniel Nichter"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://hackmongo.com/mongodb-bulk-insert-error-handling/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hack Mongo" />
+
+  <meta name="generator" content="Hugo 0.20.7" />
+  <link rel="canonical" href="http://hackmongo.com/mongodb-bulk-insert-error-handling/" />
+  <link rel="alternate" href="http://hackmongo.com/index.xml" type="application/rss+xml" title="Hack Mongo">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap-toc.min.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/atom-one-dark.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/main.css" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://hackmongo.com/">Hack Mongo</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-left">
+
+
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+
+
+
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">go</a>
+              <div class="navlinks-children">
+
+                  <a href="/page/golang-antipatterns/">Go Antipatterns</a>
+
+                  <a href="/page/idiomatic-go/">Idiomatic Go</a>
+
+              </div>
+            </li>
+
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <nav id="toc" data-spy="affix" data-toggle="toc"><a href="#">MongoDB Bulk Insert Error Handling</a></nav>
+    </div>
+    <div class="col-sm-8">
+      <article role="main" class="blog-post">
+
+
+<p>Half a year ago, I reported a MongoDB server bug: <a href="https://jira.mongodb.org/browse/SERVER-29861">SERVER-29861</a>. Yesterday, we effectively finally closed it. First, my thanks to Asya and the MongoDB dev team for the thorough discussion and exploration of this issue, which was ultimately concluded <em>not</em> to be a bug. I&rsquo;m glad to see MongoDB dig deep until the issue reaches bottom. As someone who formerly maintained a large, widely used open-source project for several years, I know how difficult this can be.</p>
+
+<p>From SERVER-29861 I gained insight into the nuances of MongoDB replication and, more to the point of this blog post, bulk insert error handling. There&rsquo;s a Stack Overflow question about this: <a href="https://stackoverflow.com/questions/16210863/how-to-recover-from-error-during-bulk-insert-in-mongodb">How to recover from error during bulk insert in MongoDB</a>. Apart from that, I couldn&rsquo;t a more thorough explan</p>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/19998394/mongodb-handling-failure-of-insert-in-java">MongoDB handling failure of insert in Java</a></li>
+</ul>
+
+<p>First, a quick word on the former.</p>
+
+<h2 id="nuances-of-mongodb-replication">Nuances of MongoDB Replication</h2>
+
+<p>I&rsquo;m steeped in the world of SQL, ACID, etc.&ndash;15+ years of thinking and practice in those paradigms, specifically MySQL. One thing I take for granted: when MySQL says a row is written, I trust it, full stop (presuming durability settings are correct). When I read the MongoDB manual for <code>nInserted</code> (or just <code>n</code>) and it says &ldquo;the number of documents inserted&rdquo;, I take that at face value. But MongoDB is a very different animal than MySQL, in some ways simpler, in other ways more complex and subtle. For one thing, MySQL replication is asynchronous (semi-sync isn&rsquo;t widely used, yet), whereas MongoDB replication is asynchronous, semi-synchronous, or effectively synchronous depending on the <a href="https://docs.mongodb.com/manual/reference/write-concern/">write concern</a>. In my case, i.e. given my <a href="http://hackmongo.com/post/custom-mongodb-replica-set-write-concern/">custom write concern</a>, replication is semi-sync across data centers. I didn&rsquo;t fully appreciate the nuances and issues this introduces with respect to bulk insert error handling, but Asya stated it clearly:</p>
+
+<blockquote>
+<p>only the number of documents that definitely were written and replicated (i.e. satisfied write concern) is returned, but more documents <strong>may</strong> have been written that are not included in &ldquo;n&rdquo; because there is no proof that they were replicated before the connection was lost.</p>
+</blockquote>
+
+<p>It seems so obvious now: write acks can be lost, so what is MongoDB to do? It can only report what it knows for sure: the write acks it received. But the lost ack means more data was written but unacknowledged. To be honest, SERVER-29861 resulted from my attempts to make MongoDB lose data, but I found the opposite: MongoDB persisted <em>more</em> data than I expected. When not factoring in the nuances MongoDB replication with write concern and trying to produce data loss, it&rsquo;s difficult to make sense of the opposite result: data gain. Realizing this is normal, we shift to thinking about handling it.</p>
+
+<h2 id="solution-1-don-t">Solution 1: Don&rsquo;t</h2>
+
+<p>Another broad insight having developed with and used MongoDB in production: it pushes more logic into the app layer. With SQL databases, apps can do a surprising amount of logic in the database. With MongoDB this is often not the case, which is usually a good thing because, <a href="https://twitter.com/billkarwin/status/946137373896687616">as my colleague once noted</a>: it&rsquo;s easier to scale out app servers than the database. Consequently, apps using MongoDB need precise and robust error handling.</p>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <p class="copyright text-muted">
+    Copyright 2018 Daniel Nichter
+  </p>
+  <p><a href="https://github.com/daniel-nichter"><img src="http://hackmongo.com/img/mark-github.svg"></a></p>
+</footer>
+<script src="http://hackmongo.com/js/jquery-3.2.1.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap-toc.min.js"></script>
+<script src="http://hackmongo.com/js/highlight.min.js"></script>
+<script src="http://hackmongo.com/js/main.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>

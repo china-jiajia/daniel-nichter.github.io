@@ -6,10 +6,28 @@
     <description>Recent content on Hack Mongo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Dec 2017 09:50:00 -0700</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jan 2018 19:20:00 -0700</lastBuildDate>
 
 	<atom:link href="http://hackmongo.com/index.xml" rel="self" type="application/rss+xml" />
 
+
+    <item>
+      <title>Crash-safe MySQL Replication</title>
+      <link>http://hackmongo.com/draft/crash-safe-mysql-replication-visual-guide/</link>
+      <pubDate>Thu, 18 Jan 2018 19:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/draft/crash-safe-mysql-replication-visual-guide/</guid>
+      <description>MySQL crash-safe replication is an old feature (~4 years as of MySQL 5.6), but it&amp;rsquo;s not consistently understood or applied. The MySQL manual on the topic, 16.3.2 Handling an Unexpected Halt of a Replication Slave, is correct and authoritative, but unless you grok MySQL replication that page doesn&amp;rsquo;t make it obvious why crash-safe replication works. Other blog posts explain why, but sometimes add other considerations, making it unclear which settings are necessary and sufficient.</description>
+    </item>
+
+    <item>
+      <title>MongoDB Bulk Insert Error Handling</title>
+      <link>http://hackmongo.com/mongodb-bulk-insert-error-handling/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/mongodb-bulk-insert-error-handling/</guid>
+      <description>Half a year ago, I reported a MongoDB server bug: SERVER-29861. Yesterday, we effectively finally closed it. First, my thanks to Asya and the MongoDB dev team for the thorough discussion and exploration of this issue, which was ultimately concluded not to be a bug. I&amp;rsquo;m glad to see MongoDB dig deep until the issue reaches bottom. As someone who formerly maintained a large, widely used open-source project for several years, I know how difficult this can be.</description>
+    </item>
 
     <item>
       <title>Tech Workers Are Good People</title>
@@ -58,6 +76,15 @@ Av&amp;rsquo;s blog post made me think&amp;hellip;</description>
 
       <guid>http://hackmongo.com/post/designing-tools-for-integration/</guid>
       <description>When we write a new tool to do X, it&amp;rsquo;s common to program the tool to do X in one way. When X is trivial or very narrow in scope, this makes sense, and programming any more would fall prey to over-engineering. However, when the tool does many things (all logically related, else it falls prey to bloat and/or feature-creep), there quickly becomes many ways to accomplish those many things.</description>
+    </item>
+
+    <item>
+      <title>How To Test the Database</title>
+      <link>http://hackmongo.com/go-mysql-conn/</link>
+      <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/go-mysql-conn/</guid>
+      <description>Connector Interface The Connector interface abstracts away (hides) how MySQL connections are made and only returns sql.Conn (new in Go 1.9). Code that uses a connection (let&amp;rsquo;s call it &amp;ldquo;database code&amp;rdquo;) does not and should not know how to connect to the database. The &amp;ldquo;how&amp;rdquo; is an implementation detail that should be hidden from database code. Furthermore, programs usually run in multiple environments: local (laptop), CI, staging, and production. The &amp;ldquo;how&amp;rdquo; can be different in all environments, but the database code should not.</description>
     </item>
 
     <item>

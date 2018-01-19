@@ -39,6 +39,15 @@
     </item>
 
     <item>
+      <title>Crash Safe</title>
+      <link>http://hackmongo.com/tags/crash-safe/</link>
+      <pubDate>Thu, 18 Jan 2018 19:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/crash-safe/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Database</title>
       <link>http://hackmongo.com/tags/database/</link>
       <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
@@ -66,11 +75,38 @@
     </item>
 
     <item>
+      <title>Error Handling</title>
+      <link>http://hackmongo.com/tags/error-handling/</link>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+
+      <guid>http://hackmongo.com/tags/error-handling/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Go Mysql</title>
+      <link>http://hackmongo.com/tags/go-mysql/</link>
+      <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/go-mysql/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Golang</title>
       <link>http://hackmongo.com/tags/golang/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
 
       <guid>http://hackmongo.com/tags/golang/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Gtid</title>
+      <link>http://hackmongo.com/tags/gtid/</link>
+      <pubDate>Thu, 18 Jan 2018 19:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/gtid/</guid>
       <description></description>
     </item>
 
@@ -95,9 +131,18 @@
     <item>
       <title>Mongodb</title>
       <link>http://hackmongo.com/tags/mongodb/</link>
-      <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
 
       <guid>http://hackmongo.com/tags/mongodb/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Mysql</title>
+      <link>http://hackmongo.com/tags/mysql/</link>
+      <pubDate>Thu, 18 Jan 2018 19:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/mysql/</guid>
       <description></description>
     </item>
 
@@ -134,6 +179,15 @@
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
 
       <guid>http://hackmongo.com/tags/replica-set/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Replication</title>
+      <link>http://hackmongo.com/tags/replication/</link>
+      <pubDate>Thu, 18 Jan 2018 19:20:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/replication/</guid>
       <description></description>
     </item>
 

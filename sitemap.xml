@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
+    <loc>http://hackmongo.com/draft/crash-safe-mysql-replication-visual-guide/</loc>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/mongodb-bulk-insert-error-handling/</loc>
+    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/post/tech-workers-are-good-people/</loc>
     <lastmod>2017-12-31T09:50:00-07:00</lastmod>
   </url>
@@ -24,6 +34,11 @@
   <url>
     <loc>http://hackmongo.com/post/designing-tools-for-integration/</loc>
     <lastmod>2017-09-05T00:00:00+00:00</lastmod>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/go-mysql-conn/</loc>
+    <lastmod>2017-08-20T11:20:00-07:00</lastmod>
   </url>
 
   <url>
@@ -80,6 +95,12 @@
   </url>
 
   <url>
+    <loc>http://hackmongo.com/tags/crash-safe/</loc>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/tags/database/</loc>
     <lastmod>2017-08-20T11:20:00-07:00</lastmod>
     <priority>0</priority>
@@ -92,8 +113,26 @@
   </url>
 
   <url>
+    <loc>http://hackmongo.com/draft/</loc>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/tags/engineering/</loc>
     <lastmod>2017-11-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/tags/error-handling/</loc>
+    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/tags/go-mysql/</loc>
+    <lastmod>2017-08-20T11:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -104,8 +143,14 @@
   </url>
 
   <url>
+    <loc>http://hackmongo.com/tags/gtid/</loc>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/</loc>
-    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -123,7 +168,13 @@
 
   <url>
     <loc>http://hackmongo.com/tags/mongodb/</loc>
-    <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/tags/mysql/</loc>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -160,6 +211,12 @@
   <url>
     <loc>http://hackmongo.com/tags/replica-set/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/tags/replication/</loc>
+    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 

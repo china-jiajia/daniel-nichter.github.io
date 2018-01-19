@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>How To Test the Database</title>
+  <meta property="og:title" content="How To Test the Database" />
+  <meta name="twitter:title" content="How To Test the Database" />
+  <meta name="description" content="It&#39;s important but not special">
+  <meta property="og:description" content="It&#39;s important but not special">
+  <meta name="twitter:description" content="It&#39;s important but not special">
+  <meta name="author" content="Daniel Nichter"/>
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="http://hackmongo.com/go-mysql-conn/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hack Mongo" />
+
+  <meta name="generator" content="Hugo 0.20.7" />
+  <link rel="canonical" href="http://hackmongo.com/go-mysql-conn/" />
+  <link rel="alternate" href="http://hackmongo.com/index.xml" type="application/rss+xml" title="Hack Mongo">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap-toc.min.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/atom-one-dark.css" />
+  <link rel="stylesheet" href="http://hackmongo.com/css/main.css" />
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://hackmongo.com/">Hack Mongo</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-left">
+
+
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+
+
+
+            <li class="navlinks-container">
+              <a class="navlinks-parent" href="javascript:void(0)">go</a>
+              <div class="navlinks-children">
+
+                  <a href="/page/golang-antipatterns/">Go Antipatterns</a>
+
+                  <a href="/page/idiomatic-go/">Idiomatic Go</a>
+
+              </div>
+            </li>
+
+
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <nav id="toc" data-spy="affix" data-toggle="toc"><a href="#">How To Test the Database</a></nav>
+    </div>
+    <div class="col-sm-8">
+      <article role="main" class="blog-post">
+
+
+<h3 id="connector-interface">Connector Interface</h3>
+
+<p>The <code>Connector</code> interface abstracts away (hides) how MySQL connections are made and only returns <code>sql.Conn</code> (<a href="https://golang.org/doc/go1.9#database/sql">new in Go 1.9</a>). Code that uses a connection (let&rsquo;s call it &ldquo;database code&rdquo;) does not and should not know how to connect to the database. The &ldquo;how&rdquo; is an implementation detail that should be hidden from database code. Furthermore, programs usually run in multiple environments: local (laptop), CI, staging, and production. The &ldquo;how&rdquo; can be different in all environments, but the database code should not. An interface like <code>Connector</code>, which is a type of <a href="https://en.wikipedia.org/wiki/Factory_method_pattern">factory</a>, is necessary.</p>
+
+<h3 id="sql-conn">sql.Conn</h3>
+
+<p>Using only <code>sql.Conn</code> is safe and has no drawbacks. It matches the developer&rsquo;s expectation that &ldquo;my connection is <em>my</em> connection&rdquo;. Unless a developer reads the docs carefully, they are prone to using <code>sql.DB</code> in correctly with potentially disastrous results. The benefit of the transparent connection pool in <code>sql.DB</code> are outweighed by the consequences of its improper use. Luckily, <code>sql.Conn</code> in Go 1.9 provide a safer and better alternative.</p>
+
+<h3 id="human-friendly-error-handling">Human-friendly Error Handling</h3>
+
+<p>In production, it is common for MySQL connections to be dropped, lost, killed, etc. There are a suite of common errors that well-design production systems should handle but are not
+trivial to handle because it is not Go or the driver&rsquo;s responsibility to make them obvious; it is the developer&rsquo;s responsibility, but MySQL is a complicated system, so unless the de
+veloper also happens to be a MySQL expert, the errors ar</p>
+
+<p>/*</p>
+
+<pre><code>not running:   0: dial tcp &lt;addr&gt;: getsockopt: connection refused
+
+    kill conn:     0: invalid connection
+    crash:         0: invalid connection
+        shutdown:   1053: Server shutdown in progress
+
+        kill query: 1317: Query execution was interrupted
+            read-only:  1290: The MySQL server is running with the --read-only (super) option so it cannot execute this statement
+            dupe key:   1062: Duplicate entry '&lt;value&gt;' for key '&lt;index name&gt;'
+
+                HOW DOES IT HANDLE UNDER OUTAGE PRESSURE?
+                Need circuit breaker so new conns dont just stall -- fail quickly
+                */
+</code></pre>
+
+      </article>
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <p class="copyright text-muted">
+    Copyright 2018 Daniel Nichter
+  </p>
+  <p><a href="https://github.com/daniel-nichter"><img src="http://hackmongo.com/img/mark-github.svg"></a></p>
+</footer>
+<script src="http://hackmongo.com/js/jquery-3.2.1.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap.min.js"></script>
+<script src="http://hackmongo.com/js/bootstrap-toc.min.js"></script>
+<script src="http://hackmongo.com/js/highlight.min.js"></script>
+<script src="http://hackmongo.com/js/main.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
