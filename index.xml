@@ -6,10 +6,19 @@
     <description>Recent content on Hack Mongo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Jan 2018 19:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jan 2018 18:40:00 -0700</lastBuildDate>
 
 	<atom:link href="http://hackmongo.com/index.xml" rel="self" type="application/rss+xml" />
 
+
+    <item>
+      <title>Crash-safe MySQL Replication</title>
+      <link>http://hackmongo.com/post/crash-safe-mysql-replication-a-visual-guide/</link>
+      <pubDate>Tue, 23 Jan 2018 18:40:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/post/crash-safe-mysql-replication-a-visual-guide/</guid>
+      <description>MySQL crash-safe replication is an old feature (~4 years as of MySQL 5.6), but it&amp;rsquo;s not consistently understood or applied. The MySQL manual on the topic, 16.3.2 Handling an Unexpected Halt of a Replication Slave, is correct and authoritative, but unless you grok MySQL replication that page doesn&amp;rsquo;t make it obvious why crash-safe replication works. Other blog posts explain why, but sometimes add other considerations, making it unclear which settings are necessary and sufficient.</description>
+    </item>
 
     <item>
       <title>Command-line Interface Antipatterns</title>
@@ -18,15 +27,6 @@
 
       <guid>http://hackmongo.com/page/cli-antipatterns/</guid>
       <description>Command-line Interface Antipatterns Apps (web, mobile, and native) and APIs do not lessen the need or importance of command-line tools. A beautifully designed command-line user experience is arguably more important and than a graphical UX because the command line is deceptively simple: text on a screen. Wielding mere text on screen is an art akin to wielding mere paint on canvas. This page documents what I believe to be command-line interface (CLI) antipatterns which, in the long or short run, detract from both UX and developer effectiveness.</description>
-    </item>
-
-    <item>
-      <title>Crash-safe MySQL Replication</title>
-      <link>http://hackmongo.com/draft/crash-safe-mysql-replication-visual-guide/</link>
-      <pubDate>Thu, 18 Jan 2018 19:20:00 -0700</pubDate>
-
-      <guid>http://hackmongo.com/draft/crash-safe-mysql-replication-visual-guide/</guid>
-      <description>MySQL crash-safe replication is an old feature (~4 years as of MySQL 5.6), but it&amp;rsquo;s not consistently understood or applied. The MySQL manual on the topic, 16.3.2 Handling an Unexpected Halt of a Replication Slave, is correct and authoritative, but unless you grok MySQL replication that page doesn&amp;rsquo;t make it obvious why crash-safe replication works. Other blog posts explain why, but sometimes add other considerations, making it unclear which settings are necessary and sufficient.</description>
     </item>
 
     <item>

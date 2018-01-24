@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>http://hackmongo.com/page/cli-antipatterns/</loc>
-    <lastmod>2018-01-21T19:00:00-07:00</lastmod>
+    <loc>http://hackmongo.com/post/crash-safe-mysql-replication-a-visual-guide/</loc>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/draft/crash-safe-mysql-replication-visual-guide/</loc>
-    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <loc>http://hackmongo.com/page/cli-antipatterns/</loc>
+    <lastmod>2018-01-21T19:00:00-07:00</lastmod>
   </url>
 
   <url>
@@ -113,7 +113,7 @@
 
   <url>
     <loc>http://hackmongo.com/tags/crash-safe/</loc>
-    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -126,12 +126,6 @@
   <url>
     <loc>http://hackmongo.com/tags/domain-model/</loc>
     <lastmod>2017-12-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/draft/</loc>
-    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -161,13 +155,13 @@
 
   <url>
     <loc>http://hackmongo.com/tags/gtid/</loc>
-    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
     <loc>http://hackmongo.com/</loc>
-    <lastmod>2018-01-21T19:00:00-07:00</lastmod>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -191,7 +185,7 @@
 
   <url>
     <loc>http://hackmongo.com/tags/mysql/</loc>
-    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -215,7 +209,7 @@
 
   <url>
     <loc>http://hackmongo.com/post/</loc>
-    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -233,7 +227,7 @@
 
   <url>
     <loc>http://hackmongo.com/tags/replication/</loc>
-    <lastmod>2018-01-18T19:20:00-07:00</lastmod>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
