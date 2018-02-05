@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
+    <loc>http://hackmongo.com/post/bootloader-design-pattern/</loc>
+    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/post/database-scalability-contention-and-crosstalk/</loc>
     <lastmod>2018-01-28T11:20:00-07:00</lastmod>
   </url>
@@ -93,6 +98,12 @@
   </url>
 
   <url>
+    <loc>http://hackmongo.com/tags/bootloader/</loc>
+    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/tags/business/</loc>
     <lastmod>2017-12-31T09:50:00-07:00</lastmod>
     <priority>0</priority>
@@ -125,6 +136,12 @@
   <url>
     <loc>http://hackmongo.com/tags/database/</loc>
     <lastmod>2018-01-28T11:20:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>http://hackmongo.com/tags/design-pattern/</loc>
+    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -172,7 +189,7 @@
 
   <url>
     <loc>http://hackmongo.com/</loc>
-    <lastmod>2018-01-28T11:20:00-07:00</lastmod>
+    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -220,7 +237,7 @@
 
   <url>
     <loc>http://hackmongo.com/post/</loc>
-    <lastmod>2018-01-28T11:20:00-07:00</lastmod>
+    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -268,7 +285,7 @@
 
   <url>
     <loc>http://hackmongo.com/tags/software-design/</loc>
-    <lastmod>2017-12-10T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 

@@ -21,6 +21,15 @@
     </item>
 
     <item>
+      <title>Bootloader</title>
+      <link>http://hackmongo.com/tags/bootloader/</link>
+      <pubDate>Sun, 04 Feb 2018 19:30:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/bootloader/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Business</title>
       <link>http://hackmongo.com/tags/business/</link>
       <pubDate>Sun, 31 Dec 2017 09:50:00 -0700</pubDate>
@@ -71,6 +80,15 @@
       <pubDate>Sun, 28 Jan 2018 11:20:00 -0700</pubDate>
 
       <guid>http://hackmongo.com/tags/database/</guid>
+      <description></description>
+    </item>
+
+    <item>
+      <title>Design Pattern</title>
+      <link>http://hackmongo.com/tags/design-pattern/</link>
+      <pubDate>Sun, 04 Feb 2018 19:30:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/design-pattern/</guid>
       <description></description>
     </item>
 
@@ -257,7 +275,7 @@
     <item>
       <title>Software Design</title>
       <link>http://hackmongo.com/tags/software-design/</link>
-      <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 04 Feb 2018 19:30:00 -0700</pubDate>
 
       <guid>http://hackmongo.com/tags/software-design/</guid>
       <description></description>

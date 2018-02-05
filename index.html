@@ -84,13 +84,46 @@
 
 
             <article class="post-preview">
+              <a href="http://hackmongo.com/post/bootloader-design-pattern/">
+                <h1 class="post-title">Bootloader Design Pattern</h1>
+                <h3 class="post-subtitle">Make a clean start with extensibility and integration</h3>
+              </a>
+              <div class="post-entry">
+
+		              Extensibility is a lofty goal for software design, and difficult to achieve. The Wikipedia article notes:
+ Extensible design in software engineering is to accept that not everything can be designed in advance.
+ That&rsquo;s a paradox because it entails that extensible design does not accept that extensibility can be designed in advance! Fortunately, there&rsquo;s at least one solution that can be intentionally designed and implemented in advance. I call it the &ldquo;Bootloader&rdquo; design pattern.
+                  <a href="http://hackmongo.com/post/bootloader-design-pattern/" class="post-read-more">Read more...</a>
+
+              </div>
+              <div class="post-meta">
+
+
+  <div>Feb 4, 2018</div>
+  <div class="blog-tags">
+
+
+        <a href="/tags/software-design">#software design</a>
+
+        <a href="/tags/design-pattern">#design pattern</a>
+
+        <a href="/tags/bootloader">#bootloader</a>
+
+
+  </div>
+</div>
+
+
+           </article>
+
+            <article class="post-preview">
               <a href="http://hackmongo.com/post/database-scalability-contention-and-crosstalk/">
                 <h1 class="post-title">Database Scalability: Contention and Crosstalk</h1>
                 <h3 class="post-subtitle">Do more with less</h3>
               </a>
               <div class="post-entry">
 
-		              New engineers might not know and experienced engineers might do not believe that database systems do not and cannot scale gracefully to 100% system capacity but, rather and counterintutively, exhibit retrograde performance at some point less than 100% system capacity. The reasonable presumption is:
+		              New engineers might not know and experienced engineers might not believe that database systems do not and cannot scale gracefully to 100% system capacity but, rather and counterintutively, exhibit retrograde performance at some point less than 100% system capacity. The reasonable presumption is:
 We presume that a database can scale to almost 100% of system capacity, and max performance is a small fraction at the very top (right, orange slice) because, after all, the system itself needs some resources to run itself.
                   <a href="http://hackmongo.com/post/database-scalability-contention-and-crosstalk/" class="post-read-more">Read more...</a>
 
@@ -361,37 +394,6 @@ Av&rsquo;s blog post made me think&hellip;
 
 
         <a href="/tags/software-design">#software design</a>
-
-
-  </div>
-</div>
-
-
-           </article>
-
-            <article class="post-preview">
-              <a href="http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/">
-                <h1 class="post-title">Reading os/exec.Cmd Output Without Race Conditions</h1>
-                <h3 class="post-subtitle">And without cmd.StdoutPipe</h3>
-              </a>
-              <div class="post-entry">
-
-		              Golang Weekly issue 164 features a nice article, Advanced command execution in Go with os/exec, which details several ways of working with os/exec, especially how to read STDOUT and STDERR while the command is running. This common task is commonly done wrong, where &ldquo;wrong&rdquo; means &ldquo;the code has a race condition&rdquo;. This blog post shows how to read STDOUT and STDERR from an os/exec.Cmd while it&rsquo;s running and without race conditions.
-                  <a href="http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/" class="post-read-more">Read more...</a>
-
-              </div>
-              <div class="post-meta">
-
-
-  <div>Jun 17, 2017</div>
-  <div class="blog-tags">
-
-
-        <a href="/tags/golang">#golang</a>
-
-        <a href="/tags/os/exec">#os/exec</a>
-
-        <a href="/tags/race-condition">#race condition</a>
 
 
   </div>
