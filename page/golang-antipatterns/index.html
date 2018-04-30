@@ -18,7 +18,7 @@ These are guidelines not absolutes. For example, Generic Package is common in pr
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Hack Mongo" />
 
-  <meta name="generator" content="Hugo 0.20.7" />
+  <meta name="generator" content="Hugo 0.40.1" />
   <link rel="canonical" href="http://hackmongo.com/page/golang-antipatterns/" />
   <link rel="alternate" href="http://hackmongo.com/index.xml" type="application/rss+xml" title="Hack Mongo">
   <link rel="stylesheet" href="http://hackmongo.com/css/bootstrap.min.css">
@@ -316,6 +316,50 @@ func GetNodes(er Ranger) []string {
 <p><em>Importance: medium</em></p>
 
 <p>An argument is transient if not directly used by the function; the function only passes it to other function calls. The argument is literally only passing through the function, hence it is &ldquo;transient&rdquo;. The antipattern also exhibits the &ldquo;Promiscuous Interface&rdquo; antipattern, and the better solution uses a well-defined interface to avoid the transient argument by encapsulating the query logic in the Ranger implementation.</p>
+
+<h2 id="runaway-arguments">Runaway Arguments</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+func NewFoo(
+    id string,
+    name string,
+    alias string,
+    userId uint,
+    apiKey string,
+    loc *Location,
+    size int64,
+    active bool,
+) *Foo {
+    // ...
+}
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+
+// FooConfig represents required and optional values for creating a new Foo.
+type FooConfig struct {
+    id     string    // ID of the foo
+    name   string    // Human-friendly name of the foo
+    alias  string    // Alias of the foo (optional)
+    userId uint      // User ID who created this foo
+    apiKey string    // API key
+    loc    *Location // Location of this foo
+    size   int64     // Size of this foo
+    active bool      // True if this foo is active
+}
+
+func NewFoo(cfg FooConfig) *Foo {
+    // ...
+}
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>Functions should have at most four positional arguments. Having more is difficult for humans to remember and, if data type are the same, humans might confuse the order of arguments and cause subtle bugs (e.g. passing <code>firstName, middleName, lastName</code> instead of <code>lastName, firstName, middleName</code>). Use a struct to represent more than four arguments. This has two important benefits: the arguments can and should be documented, and it&rsquo;s &ldquo;future-proof&rdquo;: adding new arguments is backward-compatible. The arguments struct should be immutable.</p>
 
 <h2 id="c-style-pointer">C-style Pointer</h2>
 
