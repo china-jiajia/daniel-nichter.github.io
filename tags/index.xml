@@ -129,9 +129,18 @@
     </item>
 
     <item>
+      <title>Godoc</title>
+      <link>http://hackmongo.com/tags/godoc/</link>
+      <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
+
+      <guid>http://hackmongo.com/tags/godoc/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Golang</title>
       <link>http://hackmongo.com/tags/golang/</link>
-      <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
 
       <guid>http://hackmongo.com/tags/golang/</guid>
       <description></description>
@@ -275,7 +284,7 @@
     <item>
       <title>Software Design</title>
       <link>http://hackmongo.com/tags/software-design/</link>
-      <pubDate>Sun, 04 Feb 2018 19:30:00 -0700</pubDate>
+      <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
 
       <guid>http://hackmongo.com/tags/software-design/</guid>
       <description></description>

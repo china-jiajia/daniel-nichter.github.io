@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>http://hackmongo.com/post/thinking-in-go/</loc>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/post/bootloader-design-pattern/</loc>
     <lastmod>2018-02-04T19:30:00-07:00</lastmod>
   </url>
@@ -171,8 +176,14 @@
   </url>
 
   <url>
+    <loc>http://hackmongo.com/tags/godoc/</loc>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>http://hackmongo.com/tags/golang/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -190,7 +201,7 @@
 
   <url>
     <loc>http://hackmongo.com/</loc>
-    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -238,7 +249,7 @@
 
   <url>
     <loc>http://hackmongo.com/post/</loc>
-    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -286,7 +297,7 @@
 
   <url>
     <loc>http://hackmongo.com/tags/software-design/</loc>
-    <lastmod>2018-02-04T19:30:00-07:00</lastmod>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
