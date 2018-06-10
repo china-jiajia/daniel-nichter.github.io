@@ -3,336 +3,314 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://hackmongo.com/post/thinking-in-go/</loc>
+    <loc>https://hackmongo.com/post/thinking-in-go/</loc>
     <lastmod>2018-05-13T09:00:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/bootloader-design-pattern/</loc>
+    <loc>https://hackmongo.com/post/bootloader-design-pattern/</loc>
     <lastmod>2018-02-04T19:30:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/database-scalability-contention-and-crosstalk/</loc>
+    <loc>https://hackmongo.com/post/database-scalability-contention-and-crosstalk/</loc>
     <lastmod>2018-01-28T11:20:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/crash-safe-mysql-replication-a-visual-guide/</loc>
+    <loc>https://hackmongo.com/post/crash-safe-mysql-replication-a-visual-guide/</loc>
     <lastmod>2018-01-23T18:40:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/page/cli-antipatterns/</loc>
+    <loc>https://hackmongo.com/page/cli-antipatterns/</loc>
     <lastmod>2018-01-21T19:00:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/mongodb-bulk-insert-error-handling/</loc>
-    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/post/tech-workers-are-good-people/</loc>
+    <loc>https://hackmongo.com/post/tech-workers-are-good-people/</loc>
     <lastmod>2017-12-31T09:50:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/approaching-a-new-software-project/</loc>
+    <loc>https://hackmongo.com/post/approaching-a-new-software-project/</loc>
     <lastmod>2017-12-10T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/ideas-leaders-and-engineers/</loc>
+    <loc>https://hackmongo.com/post/ideas-leaders-and-engineers/</loc>
     <lastmod>2017-11-12T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/five-point-checklist-for-excellent-software/</loc>
+    <loc>https://hackmongo.com/post/five-point-checklist-for-excellent-software/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/designing-tools-for-integration/</loc>
+    <loc>https://hackmongo.com/post/designing-tools-for-integration/</loc>
     <lastmod>2017-09-05T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/go-mysql-conn/</loc>
+    <loc>https://hackmongo.com/post/how-to-test-the-database/</loc>
     <lastmod>2017-08-20T11:20:00-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/how-to-test-the-database/</loc>
-    <lastmod>2017-08-20T11:20:00-07:00</lastmod>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/post/design-before-implementation/</loc>
+    <loc>https://hackmongo.com/post/design-before-implementation/</loc>
     <lastmod>2017-08-01T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/</loc>
+    <loc>https://hackmongo.com/post/reading-os-exec-cmd-output-without-race-conditions/</loc>
     <lastmod>2017-06-17T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/post/custom-mongodb-replica-set-write-concern/</loc>
+    <loc>https://hackmongo.com/post/custom-mongodb-replica-set-write-concern/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/page/golang-antipatterns/</loc>
+    <loc>https://hackmongo.com/page/golang-antipatterns/</loc>
     <lastmod>2017-06-03T18:51:14-07:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/page/idiomatic-go/</loc>
+    <loc>https://hackmongo.com/page/idiomatic-go/</loc>
     <lastmod>2017-06-03T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/page/about/</loc>
+    <loc>https://hackmongo.com/page/about/</loc>
     <lastmod>2017-05-29T00:00:00+00:00</lastmod>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/antipatterns/</loc>
+    <loc>https://hackmongo.com/tags/antipatterns/</loc>
     <lastmod>2018-01-21T19:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/bootloader/</loc>
+    <loc>https://hackmongo.com/tags/bootloader/</loc>
     <lastmod>2018-02-04T19:30:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/business/</loc>
+    <loc>https://hackmongo.com/tags/business/</loc>
     <lastmod>2017-12-31T09:50:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/checklist/</loc>
+    <loc>https://hackmongo.com/tags/checklist/</loc>
     <lastmod>2017-09-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/cli/</loc>
+    <loc>https://hackmongo.com/tags/cli/</loc>
     <lastmod>2018-01-21T19:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/command-line/</loc>
+    <loc>https://hackmongo.com/tags/command-line/</loc>
     <lastmod>2018-01-21T19:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/crash-safe/</loc>
+    <loc>https://hackmongo.com/tags/crash-safe/</loc>
     <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/database/</loc>
+    <loc>https://hackmongo.com/tags/database/</loc>
     <lastmod>2018-01-28T11:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/design-pattern/</loc>
+    <loc>https://hackmongo.com/tags/design-pattern/</loc>
     <lastmod>2018-02-04T19:30:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/domain-model/</loc>
+    <loc>https://hackmongo.com/tags/domain-model/</loc>
     <lastmod>2017-12-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/engineering/</loc>
+    <loc>https://hackmongo.com/tags/engineering/</loc>
     <lastmod>2017-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/error-handling/</loc>
-    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/go-mysql/</loc>
-    <lastmod>2017-08-20T11:20:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/godoc/</loc>
+    <loc>https://hackmongo.com/tags/godoc/</loc>
     <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/golang/</loc>
+    <loc>https://hackmongo.com/tags/golang/</loc>
     <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/gtid/</loc>
+    <loc>https://hackmongo.com/tags/gtid/</loc>
     <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/gunther/</loc>
+    <loc>https://hackmongo.com/tags/gunther/</loc>
     <lastmod>2018-01-28T11:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/</loc>
+    <loc>https://hackmongo.com/</loc>
     <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/integration/</loc>
+    <loc>https://hackmongo.com/tags/integration/</loc>
     <lastmod>2017-09-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/leadership/</loc>
+    <loc>https://hackmongo.com/tags/leadership/</loc>
     <lastmod>2017-11-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/mongodb/</loc>
-    <lastmod>2018-01-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/mysql/</loc>
-    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/os/exec/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/page/</loc>
-    <lastmod>2018-01-21T19:00:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/philosophy/</loc>
-    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/post/</loc>
-    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/race-condition/</loc>
-    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/replica-set/</loc>
+    <loc>https://hackmongo.com/tags/mongodb/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/replication/</loc>
+    <loc>https://hackmongo.com/tags/mysql/</loc>
     <lastmod>2018-01-23T18:40:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/scalability/</loc>
-    <lastmod>2018-01-28T11:20:00-07:00</lastmod>
+    <loc>https://hackmongo.com/tags/os/exec/</loc>
+    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/schwartz/</loc>
-    <lastmod>2018-01-28T11:20:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/silicon-valley/</loc>
-    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/social-responsibility/</loc>
-    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/software-design/</loc>
-    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/tag-set/</loc>
-    <lastmod>2017-06-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-
-  <url>
-    <loc>http://hackmongo.com/tags/</loc>
+    <loc>https://hackmongo.com/page/</loc>
     <lastmod>2018-01-21T19:00:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/testing/</loc>
+    <loc>https://hackmongo.com/tags/philosophy/</loc>
+    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/post/</loc>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/race-condition/</loc>
+    <lastmod>2017-06-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/replica-set/</loc>
+    <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/replication/</loc>
+    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/scalability/</loc>
+    <lastmod>2018-01-28T11:20:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/schwartz/</loc>
+    <lastmod>2018-01-28T11:20:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/silicon-valley/</loc>
+    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/social-responsibility/</loc>
+    <lastmod>2017-12-31T09:50:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/software-design/</loc>
+    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/tag-set/</loc>
+    <lastmod>2017-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/</loc>
+    <lastmod>2018-01-21T19:00:00-07:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
+    <loc>https://hackmongo.com/tags/testing/</loc>
     <lastmod>2017-08-20T11:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/tools/</loc>
+    <loc>https://hackmongo.com/tags/tools/</loc>
     <lastmod>2017-09-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/universal-scalability-law/</loc>
+    <loc>https://hackmongo.com/tags/universal-scalability-law/</loc>
     <lastmod>2018-01-28T11:20:00-07:00</lastmod>
     <priority>0</priority>
   </url>
 
   <url>
-    <loc>http://hackmongo.com/tags/write-concern/</loc>
+    <loc>https://hackmongo.com/tags/write-concern/</loc>
     <lastmod>2017-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

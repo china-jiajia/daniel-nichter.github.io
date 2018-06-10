@@ -1,1 +1,0 @@
-# daniel-nichter.github.io

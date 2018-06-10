@@ -2,336 +2,318 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hack Mongo</title>
-    <link>http://hackmongo.com/tags/</link>
+    <link>https://hackmongo.com/tags/</link>
     <description>Recent content in Tags on Hack Mongo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Jan 2018 19:00:00 -0700</lastBuildDate>
 
-	<atom:link href="http://hackmongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hackmongo.com/tags/index.xml" rel="self" type="application/rss+xml" />
 
 
     <item>
       <title>Antipatterns</title>
-      <link>http://hackmongo.com/tags/antipatterns/</link>
+      <link>https://hackmongo.com/tags/antipatterns/</link>
       <pubDate>Sun, 21 Jan 2018 19:00:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/antipatterns/</guid>
+      <guid>https://hackmongo.com/tags/antipatterns/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Bootloader</title>
-      <link>http://hackmongo.com/tags/bootloader/</link>
+      <link>https://hackmongo.com/tags/bootloader/</link>
       <pubDate>Sun, 04 Feb 2018 19:30:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/bootloader/</guid>
+      <guid>https://hackmongo.com/tags/bootloader/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Business</title>
-      <link>http://hackmongo.com/tags/business/</link>
+      <link>https://hackmongo.com/tags/business/</link>
       <pubDate>Sun, 31 Dec 2017 09:50:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/business/</guid>
+      <guid>https://hackmongo.com/tags/business/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Checklist</title>
-      <link>http://hackmongo.com/tags/checklist/</link>
+      <link>https://hackmongo.com/tags/checklist/</link>
       <pubDate>Sun, 17 Sep 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/checklist/</guid>
+      <guid>https://hackmongo.com/tags/checklist/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Cli</title>
-      <link>http://hackmongo.com/tags/cli/</link>
+      <link>https://hackmongo.com/tags/cli/</link>
       <pubDate>Sun, 21 Jan 2018 19:00:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/cli/</guid>
+      <guid>https://hackmongo.com/tags/cli/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Command Line</title>
-      <link>http://hackmongo.com/tags/command-line/</link>
+      <link>https://hackmongo.com/tags/command-line/</link>
       <pubDate>Sun, 21 Jan 2018 19:00:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/command-line/</guid>
+      <guid>https://hackmongo.com/tags/command-line/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Crash Safe</title>
-      <link>http://hackmongo.com/tags/crash-safe/</link>
+      <link>https://hackmongo.com/tags/crash-safe/</link>
       <pubDate>Tue, 23 Jan 2018 18:40:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/crash-safe/</guid>
+      <guid>https://hackmongo.com/tags/crash-safe/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Database</title>
-      <link>http://hackmongo.com/tags/database/</link>
+      <link>https://hackmongo.com/tags/database/</link>
       <pubDate>Sun, 28 Jan 2018 11:20:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/database/</guid>
+      <guid>https://hackmongo.com/tags/database/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Design Pattern</title>
-      <link>http://hackmongo.com/tags/design-pattern/</link>
+      <link>https://hackmongo.com/tags/design-pattern/</link>
       <pubDate>Sun, 04 Feb 2018 19:30:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/design-pattern/</guid>
+      <guid>https://hackmongo.com/tags/design-pattern/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Domain Model</title>
-      <link>http://hackmongo.com/tags/domain-model/</link>
+      <link>https://hackmongo.com/tags/domain-model/</link>
       <pubDate>Sun, 10 Dec 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/domain-model/</guid>
+      <guid>https://hackmongo.com/tags/domain-model/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Engineering</title>
-      <link>http://hackmongo.com/tags/engineering/</link>
+      <link>https://hackmongo.com/tags/engineering/</link>
       <pubDate>Sun, 12 Nov 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/engineering/</guid>
-      <description></description>
-    </item>
-
-    <item>
-      <title>Error Handling</title>
-      <link>http://hackmongo.com/tags/error-handling/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
-
-      <guid>http://hackmongo.com/tags/error-handling/</guid>
-      <description></description>
-    </item>
-
-    <item>
-      <title>Go Mysql</title>
-      <link>http://hackmongo.com/tags/go-mysql/</link>
-      <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
-
-      <guid>http://hackmongo.com/tags/go-mysql/</guid>
+      <guid>https://hackmongo.com/tags/engineering/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Godoc</title>
-      <link>http://hackmongo.com/tags/godoc/</link>
+      <link>https://hackmongo.com/tags/godoc/</link>
       <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/godoc/</guid>
+      <guid>https://hackmongo.com/tags/godoc/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Golang</title>
-      <link>http://hackmongo.com/tags/golang/</link>
+      <link>https://hackmongo.com/tags/golang/</link>
       <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/golang/</guid>
+      <guid>https://hackmongo.com/tags/golang/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Gtid</title>
-      <link>http://hackmongo.com/tags/gtid/</link>
+      <link>https://hackmongo.com/tags/gtid/</link>
       <pubDate>Tue, 23 Jan 2018 18:40:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/gtid/</guid>
+      <guid>https://hackmongo.com/tags/gtid/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Gunther</title>
-      <link>http://hackmongo.com/tags/gunther/</link>
+      <link>https://hackmongo.com/tags/gunther/</link>
       <pubDate>Sun, 28 Jan 2018 11:20:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/gunther/</guid>
+      <guid>https://hackmongo.com/tags/gunther/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Integration</title>
-      <link>http://hackmongo.com/tags/integration/</link>
+      <link>https://hackmongo.com/tags/integration/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/integration/</guid>
+      <guid>https://hackmongo.com/tags/integration/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Leadership</title>
-      <link>http://hackmongo.com/tags/leadership/</link>
+      <link>https://hackmongo.com/tags/leadership/</link>
       <pubDate>Sun, 12 Nov 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/leadership/</guid>
+      <guid>https://hackmongo.com/tags/leadership/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Mongodb</title>
-      <link>http://hackmongo.com/tags/mongodb/</link>
-      <pubDate>Sat, 06 Jan 2018 00:00:00 +0000</pubDate>
+      <link>https://hackmongo.com/tags/mongodb/</link>
+      <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/mongodb/</guid>
+      <guid>https://hackmongo.com/tags/mongodb/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Mysql</title>
-      <link>http://hackmongo.com/tags/mysql/</link>
+      <link>https://hackmongo.com/tags/mysql/</link>
       <pubDate>Tue, 23 Jan 2018 18:40:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/mysql/</guid>
+      <guid>https://hackmongo.com/tags/mysql/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Os/Exec</title>
-      <link>http://hackmongo.com/tags/os/exec/</link>
+      <link>https://hackmongo.com/tags/os/exec/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/os/exec/</guid>
+      <guid>https://hackmongo.com/tags/os/exec/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Philosophy</title>
-      <link>http://hackmongo.com/tags/philosophy/</link>
+      <link>https://hackmongo.com/tags/philosophy/</link>
       <pubDate>Sun, 31 Dec 2017 09:50:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/philosophy/</guid>
+      <guid>https://hackmongo.com/tags/philosophy/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Race Condition</title>
-      <link>http://hackmongo.com/tags/race-condition/</link>
+      <link>https://hackmongo.com/tags/race-condition/</link>
       <pubDate>Sat, 17 Jun 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/race-condition/</guid>
+      <guid>https://hackmongo.com/tags/race-condition/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Replica Set</title>
-      <link>http://hackmongo.com/tags/replica-set/</link>
+      <link>https://hackmongo.com/tags/replica-set/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/replica-set/</guid>
+      <guid>https://hackmongo.com/tags/replica-set/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Replication</title>
-      <link>http://hackmongo.com/tags/replication/</link>
+      <link>https://hackmongo.com/tags/replication/</link>
       <pubDate>Tue, 23 Jan 2018 18:40:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/replication/</guid>
+      <guid>https://hackmongo.com/tags/replication/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Scalability</title>
-      <link>http://hackmongo.com/tags/scalability/</link>
+      <link>https://hackmongo.com/tags/scalability/</link>
       <pubDate>Sun, 28 Jan 2018 11:20:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/scalability/</guid>
+      <guid>https://hackmongo.com/tags/scalability/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Schwartz</title>
-      <link>http://hackmongo.com/tags/schwartz/</link>
+      <link>https://hackmongo.com/tags/schwartz/</link>
       <pubDate>Sun, 28 Jan 2018 11:20:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/schwartz/</guid>
+      <guid>https://hackmongo.com/tags/schwartz/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Silicon Valley</title>
-      <link>http://hackmongo.com/tags/silicon-valley/</link>
+      <link>https://hackmongo.com/tags/silicon-valley/</link>
       <pubDate>Sun, 31 Dec 2017 09:50:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/silicon-valley/</guid>
+      <guid>https://hackmongo.com/tags/silicon-valley/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Social Responsibility</title>
-      <link>http://hackmongo.com/tags/social-responsibility/</link>
+      <link>https://hackmongo.com/tags/social-responsibility/</link>
       <pubDate>Sun, 31 Dec 2017 09:50:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/social-responsibility/</guid>
+      <guid>https://hackmongo.com/tags/social-responsibility/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Software Design</title>
-      <link>http://hackmongo.com/tags/software-design/</link>
+      <link>https://hackmongo.com/tags/software-design/</link>
       <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/software-design/</guid>
+      <guid>https://hackmongo.com/tags/software-design/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Tag Set</title>
-      <link>http://hackmongo.com/tags/tag-set/</link>
+      <link>https://hackmongo.com/tags/tag-set/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/tag-set/</guid>
+      <guid>https://hackmongo.com/tags/tag-set/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Testing</title>
-      <link>http://hackmongo.com/tags/testing/</link>
+      <link>https://hackmongo.com/tags/testing/</link>
       <pubDate>Sun, 20 Aug 2017 11:20:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/testing/</guid>
+      <guid>https://hackmongo.com/tags/testing/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Tools</title>
-      <link>http://hackmongo.com/tags/tools/</link>
+      <link>https://hackmongo.com/tags/tools/</link>
       <pubDate>Tue, 05 Sep 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/tools/</guid>
+      <guid>https://hackmongo.com/tags/tools/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Universal Scalability Law</title>
-      <link>http://hackmongo.com/tags/universal-scalability-law/</link>
+      <link>https://hackmongo.com/tags/universal-scalability-law/</link>
       <pubDate>Sun, 28 Jan 2018 11:20:00 -0700</pubDate>
 
-      <guid>http://hackmongo.com/tags/universal-scalability-law/</guid>
+      <guid>https://hackmongo.com/tags/universal-scalability-law/</guid>
       <description></description>
     </item>
 
     <item>
       <title>Write Concern</title>
-      <link>http://hackmongo.com/tags/write-concern/</link>
+      <link>https://hackmongo.com/tags/write-concern/</link>
       <pubDate>Sun, 11 Jun 2017 00:00:00 +0000</pubDate>
 
-      <guid>http://hackmongo.com/tags/write-concern/</guid>
+      <guid>https://hackmongo.com/tags/write-concern/</guid>
       <description></description>
     </item>
 
