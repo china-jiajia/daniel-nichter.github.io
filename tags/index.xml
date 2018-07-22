@@ -111,6 +111,15 @@
     </item>
 
     <item>
+      <title>Errors</title>
+      <link>https://hackmongo.com/tags/errors/</link>
+      <pubDate>Sun, 22 Jul 2018 18:00:00 -0300</pubDate>
+
+      <guid>https://hackmongo.com/tags/errors/</guid>
+      <description></description>
+    </item>
+
+    <item>
       <title>Godoc</title>
       <link>https://hackmongo.com/tags/godoc/</link>
       <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
@@ -122,7 +131,7 @@
     <item>
       <title>Golang</title>
       <link>https://hackmongo.com/tags/golang/</link>
-      <pubDate>Sun, 13 May 2018 09:00:00 -0700</pubDate>
+      <pubDate>Sun, 22 Jul 2018 18:00:00 -0300</pubDate>
 
       <guid>https://hackmongo.com/tags/golang/</guid>
       <description></description>
@@ -176,7 +185,7 @@
     <item>
       <title>Mysql</title>
       <link>https://hackmongo.com/tags/mysql/</link>
-      <pubDate>Tue, 23 Jan 2018 18:40:00 -0700</pubDate>
+      <pubDate>Sun, 22 Jul 2018 18:00:00 -0300</pubDate>
 
       <guid>https://hackmongo.com/tags/mysql/</guid>
       <description></description>

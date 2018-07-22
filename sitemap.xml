@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
+    <loc>https://hackmongo.com/post/when-mysql-goes-away/</loc>
+    <lastmod>2018-07-22T18:00:00-03:00</lastmod>
+  </url>
+
+  <url>
     <loc>https://hackmongo.com/post/thinking-in-go/</loc>
     <lastmod>2018-05-13T09:00:00-07:00</lastmod>
   </url>
@@ -154,6 +159,12 @@
   </url>
 
   <url>
+    <loc>https://hackmongo.com/tags/errors/</loc>
+    <lastmod>2018-07-22T18:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+
+  <url>
     <loc>https://hackmongo.com/tags/godoc/</loc>
     <lastmod>2018-05-13T09:00:00-07:00</lastmod>
     <priority>0</priority>
@@ -161,7 +172,7 @@
 
   <url>
     <loc>https://hackmongo.com/tags/golang/</loc>
-    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+    <lastmod>2018-07-22T18:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -179,7 +190,7 @@
 
   <url>
     <loc>https://hackmongo.com/</loc>
-    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+    <lastmod>2018-07-22T18:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -203,7 +214,7 @@
 
   <url>
     <loc>https://hackmongo.com/tags/mysql/</loc>
-    <lastmod>2018-01-23T18:40:00-07:00</lastmod>
+    <lastmod>2018-07-22T18:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
 
@@ -227,7 +238,7 @@
 
   <url>
     <loc>https://hackmongo.com/post/</loc>
-    <lastmod>2018-05-13T09:00:00-07:00</lastmod>
+    <lastmod>2018-07-22T18:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
 

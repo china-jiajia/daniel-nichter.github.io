@@ -82,29 +82,29 @@
 
 
             <article class="post-preview">
-              <a href="https://hackmongo.com/post/thinking-in-go/">
-                <h1 class="post-title">Thinking in Go</h1>
-
+              <a href="https://hackmongo.com/post/when-mysql-goes-away/">
+                <h1 class="post-title">When MySQL Goes Away</h1>
+                <h3 class="post-subtitle">Handling MySQL errors with go-mysql/errors</h3>
               </a>
               <div class="post-entry">
 
-		              After learning Go, it is necessary to think in Go in order to design and implement well-written, idiomatic Go. This blog post outlines aspects that I think are important for thinking in Go. A full exploration of these aspects could fill a book, but this only an orientation for experienced programmers new to Go.
-Programming languages have aspects which affect how we think, design, and implement software with the language: syntax, documentation, features/capabilities, language type (object-oriented, functional, compiled, etc.
-                  <a href="https://hackmongo.com/post/thinking-in-go/" class="post-read-more">Read more...</a>
+		              Handling MySQL errors in Go is not easy. There are a lot of MySQL server error codes, and the Go MySQL driver as its own errors, and Go database/sql has its own errors, and errors can bubble up from other packages, like net.OpError. Consequently, Go programs tend not to handle errors. Instead, they simply report errors:
+err := db.Query(...).Scan(&amp;v) if err != nil { return err }  And then the error is logged or reported somewhere.
+                  <a href="https://hackmongo.com/post/when-mysql-goes-away/" class="post-read-more">Read more...</a>
 
               </div>
               <div class="post-meta">
 
 
-  <div>May 13, 2018</div>
+  <div>Jul 22, 2018</div>
   <div class="blog-tags">
 
 
+        <a href="/tags/mysql">#mysql</a>
+
+        <a href="/tags/errors">#errors</a>
+
         <a href="/tags/golang">#golang</a>
-
-        <a href="/tags/software-design">#software design</a>
-
-        <a href="/tags/godoc">#godoc</a>
 
 
   </div>
@@ -120,6 +120,8 @@ Programming languages have aspects which affect how we think, design, and implem
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         <hr>
 
+
+        <li><time>2018-05-13</time>&nbsp;<a href="https://hackmongo.com/post/thinking-in-go/">Thinking in Go</a></li>
 
         <li><time>2018-02-04</time>&nbsp;<a href="https://hackmongo.com/post/bootloader-design-pattern/">Bootloader Design Pattern</a></li>
 

@@ -6,10 +6,20 @@
     <description>Recent content on Hack Mongo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 May 2018 09:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 22 Jul 2018 18:00:00 -0300</lastBuildDate>
 
 	<atom:link href="https://hackmongo.com/index.xml" rel="self" type="application/rss+xml" />
 
+
+    <item>
+      <title>When MySQL Goes Away</title>
+      <link>https://hackmongo.com/post/when-mysql-goes-away/</link>
+      <pubDate>Sun, 22 Jul 2018 18:00:00 -0300</pubDate>
+
+      <guid>https://hackmongo.com/post/when-mysql-goes-away/</guid>
+      <description>Handling MySQL errors in Go is not easy. There are a lot of MySQL server error codes, and the Go MySQL driver as its own errors, and Go database/sql has its own errors, and errors can bubble up from other packages, like net.OpError. Consequently, Go programs tend not to handle errors. Instead, they simply report errors:
+err := db.Query(...).Scan(&amp;amp;v) if err != nil { return err }  And then the error is logged or reported somewhere.</description>
+    </item>
 
     <item>
       <title>Thinking in Go</title>
