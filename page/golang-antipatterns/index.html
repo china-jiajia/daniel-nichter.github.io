@@ -266,6 +266,61 @@ func (f *Foo) Connect() error {
 
 <p>Notice also that the better example doesn&rsquo;t return an error. Unless an object is complex (and if too complex, perhaps it&rsquo;s doing too much and should be multiple, simpler objects), creation should be guaranteed, hence no return error. This means creation should be little more than initializing and assigning variables.</p>
 
+<h2 id="guarded-channel">Guarded Channel</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+mux.Lock()
+v &lt;- theChan
+mux.Unlock()
+</code></pre>
+
+<pre><code class="language-go">//
+// Better?
+//
+select {
+case &lt;-stopChan: // terminate
+    return
+case v = &lt;-theChan:
+}
+</code></pre>
+
+<p><em>Importance: high</em></p>
+
+<p>Channels do not need concurrency control because channels <em>are</em> concurrency control (among other uses). Guarding a channel is an antipattern because channels do not need to be guarded when used properly. Moreover, channels have an internal mutex, so the result is a mutex on a mutex.</p>
+
+<p>A better example depends on why the channel is being guarded. One possibility: the channel is overloaded, i.e. used for communicating and concurrency control. Communicating means that <code>v</code> is used by the code. Concurrency control means that closing <code>theChan</code> is used to signal that the receiver (probably a goroutine) should terminate. In this case, the solution is two channels: <code>theChan</code> to communicate, and <code>stopChan</code> to signal.</p>
+
+<p>To avoid this antipattern for communicating channels, it helps to think of a channel as pipe which, magically, does not spill its contents. Thanks to that magic, you can change either end of the pipe (sender or receiver) without guarding the pipe itself. (You might need to guard the sender or receiver to change them safely.)</p>
+
+<h2 id="superfluous-function">Superfluous Function</h2>
+
+<pre><code class="language-go">//
+// Antipattern
+//
+func (t *T) run(cmd string) error {
+    return t.runRemote(cmd)
+}
+
+func (t *T) other() error {
+    if err := t.run(cmd); err != nil {
+        // ...
+}
+</code></pre>
+
+<pre><code class="language-go">//
+// Better
+//
+func (t *T) other() error {
+    if err := t.runRemote(cmd); err != nil {
+        // ...
+</code></pre>
+
+<p><em>Importance: medium</em></p>
+
+<p>All code should be necessary and sufficient. Function run() in the antipattern is not necessary; other() can and should call runRemote(). Wrapper functions like run() are only necessary when they perform common/shared logic for callers (plural), like handling the error. This antipattern is stronger if there is only one caller, in which case runRemote() should definitely be called the one place where it is needed.</p>
+
 <h2 id="superfluous-structure">Superfluous Structure</h2>
 
 <pre><code class="language-go">//
